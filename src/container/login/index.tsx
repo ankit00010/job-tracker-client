@@ -1,5 +1,5 @@
 "use client";
-import Input from "@/component/input";
+import Input from "@/component/input/inputText";
 import { AdminContext, AdminContextType } from "@/context/admin_context";
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -57,6 +57,7 @@ const LoginContainer = () => {
             type="email"
             onChange={(value) => handleUserChange("email", value)}
             error={errors.email}
+            arialLabel="Enter your email"
           />
           <div className="password-container">
             <Input
@@ -65,6 +66,7 @@ const LoginContainer = () => {
               type={showPassword ? "text" : "password"}
               onChange={(value) => handleUserChange("password", value)}
               error={errors.password}
+              arialLabel="Enter your password"
             />
             <button onClick={() => setShowPassword(!showPassword)}>
               {showPassword ? <FaEye /> : <FaEyeSlash />}

@@ -1,0 +1,72 @@
+/* Container Styling */
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Label Styling */
+
+.dropdown-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+/* Drop Down Select Styling */
+
+.dropdown-select {
+  width: 100%;
+  padding: 12px;
+
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: #333;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.dropdown-container svg {
+  position: absolute;
+  top: 65%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  font-size: 18px;
+}
+
+/* Hover Effect */
+
+.dropdown-select:hover {
+  border-color: #888;
+}
+
+.dropdown-select:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Focus effect */
+.dropdown-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Option styling */
+.dropdown-select option {
+  font-size: 14px;
+  padding: 5px;
+}

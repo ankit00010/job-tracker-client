@@ -9,6 +9,10 @@ export interface AdminContextType {
   handleUserChange: (key: string, value: string) => void;
   user: UserType;
   registerUser: () => Promise<void>;
+
+  //JOB
+  userJob: JobType;
+  handleUserJobChange: (key: string, value: string) => void;
 }
 
 export const AdminContext = createContext<AdminContextType | null>(null);
@@ -24,6 +28,26 @@ const AdminProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const handleUserChange = (key: string, value: string) => {
     setUser((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
+  //Job
+
+  const [userJob, setUserJob] = useState<JobType>({
+    title: "",
+    company: "",
+    url: "",
+    status: "Applied",
+    jobType:"Full-time",
+    date: "",
+    salary: "",
+    notes: "",
+  });
+
+  const handleUserJobChange = (key: string, value: string) => {
+    setUserJob((prev) => ({
       ...prev,
       [key]: value,
     }));
@@ -88,6 +112,10 @@ const AdminProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     handleUserChange,
     user,
     registerUser,
+
+    //JOB
+    userJob,
+    handleUserJobChange,
   };
 
   return (
